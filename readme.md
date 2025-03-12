@@ -18,7 +18,7 @@
 1. Clone the repository
 
    ```bash
-   git clone https://github.com/JamesD9898/Composition-App
+   git clone https://github.com/JamesD9898/ToneDraft
    cd Composition-App
    ```
 
