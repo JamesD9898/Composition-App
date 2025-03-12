@@ -18,8 +18,8 @@
 1. Clone the repository
 
    ```bash
-   git clone https://github.com/yourusername/music-composition-app.git
-   cd music-composition-app
+   git clone https://github.com/JamesD9898/Composition-App
+   cd Composition-App
    ```
 
 2. Install dependencies
