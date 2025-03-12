@@ -53,24 +53,33 @@ const projects = [
 // Username for deletion confirmation
 const USER_NAME = "User Name"; // This would be the actual logged-in username
 
-// Function to generate a pretty random gradient
+// Function to generate a pretty random gradient that matches our color scheme
 function generateGradient() {
-    const hue1 = Math.floor(Math.random() * 360);
-    // Make the second hue complementary or analogous for prettier combinations
-    const hue2 = (hue1 + Math.floor(Math.random() * 160) + 30) % 360;
+    // Use our brand colors instead of random hues
+    const brandColors = [
+        '#F5A623', // amber
+        '#FFD68A', // amber light
+        '#5A8C7B', // teal
+        '#8CBCAC', // teal light
+        '#C1D8C3', // sage
+        '#E2EDE4', // sage light
+    ];
     
-    // Create slightly different saturations and lightnesses for variety
-    const sat1 = Math.floor(Math.random() * 20) + 70; // 70-90%
-    const sat2 = Math.floor(Math.random() * 20) + 70; // 70-90%
-    const light1 = Math.floor(Math.random() * 15) + 45; // 45-60%
-    const light2 = Math.floor(Math.random() * 15) + 45; // 45-60%
+    // Get two random colors from our brand colors
+    const color1 = brandColors[Math.floor(Math.random() * brandColors.length)];
+    let color2;
     
-    // Determine whether to use a linear or radial gradient
+    // Make sure color2 is different from color1
+    do {
+        color2 = brandColors[Math.floor(Math.random() * brandColors.length)];
+    } while (color2 === color1);
+    
+    // Create different gradient patterns using our brand colors
     const gradientTypes = [
-        `linear-gradient(135deg, hsl(${hue1}, ${sat1}%, ${light1}%), hsl(${hue2}, ${sat2}%, ${light2}%))`,
-        `linear-gradient(to right, hsl(${hue1}, ${sat1}%, ${light1}%), hsl(${hue2}, ${sat2}%, ${light2}%))`,
-        `radial-gradient(circle at top left, hsl(${hue1}, ${sat1}%, ${light1}%), hsl(${hue2}, ${sat2}%, ${light2}%))`,
-        `radial-gradient(circle, hsl(${hue1}, ${sat1}%, ${light1}%), hsl(${hue2}, ${sat2}%, ${light2}%))`
+        `linear-gradient(135deg, ${color1}, ${color2})`,
+        `linear-gradient(to right, ${color1}, ${color2})`,
+        `radial-gradient(circle at top left, ${color1}, ${color2})`,
+        `radial-gradient(circle, ${color1}, ${color2})`
     ];
     
     return gradientTypes[Math.floor(Math.random() * gradientTypes.length)];
