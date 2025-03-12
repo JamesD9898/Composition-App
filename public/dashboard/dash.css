@@ -1,0 +1,338 @@
+/* Dashboard Header Styles */
+.dashboard-header {
+    padding: 60px 0 30px;
+}
+
+.dashboard-header h1 {
+    margin-bottom: 30px;
+}
+
+.dashboard-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.search-container {
+    display: flex;
+    max-width: 500px;
+    flex: 1;
+}
+
+#search-projects {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+#search-projects:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 10px rgba(100, 255, 218, 0.2);
+}
+
+.search-btn {
+    background-color: var(--bg-secondary);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-left: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+    transition: var(--transition);
+}
+
+.search-btn:hover {
+    background-color: rgba(100, 255, 218, 0.1);
+}
+
+#project-filter {
+    padding: 12px 16px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border-radius: 4px;
+    font-size: 1rem;
+    min-width: 180px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+#project-filter:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+/* Projects Grid */
+.projects-section {
+    padding-bottom: 80px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.project-gradient {
+    width: 100%;
+    height: 100px;
+    background-size: cover;
+}
+
+.project-content {
+    padding: 20px;
+}
+
+.project-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+.project-description {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.project-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-date {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.project-filesize {
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.project-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.project-btn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.open-btn {
+    background-color: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.open-btn:hover {
+    background-color: rgba(100, 255, 218, 0.8);
+    transform: translateY(-2px);
+}
+
+.delete-btn {
+    background-color: transparent;
+    color: var(--text-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 40px;
+    transition: var(--transition);
+}
+
+.delete-btn:hover {
+    background-color: rgba(255, 0, 0, 0.1);
+    color: #ff5555;
+    border-color: #ff5555;
+}
+
+.delete-btn i {
+    font-size: 0.9rem;
+}
+
+/* Empty state */
+.empty-projects {
+    text-align: center;
+    padding: 60px 0;
+    color: var(--text-secondary);
+}
+
+.empty-projects h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+}
+
+.empty-projects p {
+    margin-bottom: 25px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filter-container {
+        width: 100%;
+    }
+    
+    #project-filter {
+        width: 100%;
+    }
+    
+    .search-container {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+/* Delete Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--bg-secondary);
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.close-modal:hover {
+    color: var(--text-primary);
+}
+
+.modal-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.modal-content p {
+    margin-bottom: 20px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.modal-form {
+    margin-top: 25px;
+}
+
+#confirm-username {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+
+#confirm-username:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 10px rgba(100, 255, 218, 0.2);
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.btn-danger {
+    background-color: #ff5555;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #ff3333;
+    box-shadow: 0 5px 15px rgba(255, 51, 51, 0.3);
+}
+
+.error-message {
+    color: #ff5555;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    text-align: center;
+    display: none;
+}
+
+.error-message.active {
+    display: block;
+}

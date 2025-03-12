@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | [Our Music App]</title>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="dash.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <a href="../index.html">[Our Music App]</a>
+        </div>
+        <div class="nav-links">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="#" class="active">Dashboard</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+        <div class="nav-buttons">
+          <button class="btn btn-secondary" id="user-profile">User Name</button>
+          <button class="btn btn-primary">New Project</button>
+        </div>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="dashboard-header">
+        <div class="container">
+          <h1>Your <span class="accent">Projects</span></h1>
+          <div class="dashboard-actions">
+            <div class="search-container">
+              <input
+                type="text"
+                id="search-projects"
+                placeholder="Search projects..."
+              />
+              <button class="search-btn">
+                <span class="accent">Search</span>
+              </button>
+            </div>
+            <div class="filter-container">
+              <select id="project-filter">
+                <option value="all">All Projects</option>
+                <option value="recent">Recent</option>
+                <option value="shared">Shared</option>
+                <option value="archived">Archived</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects-section">
+        <div class="container">
+          <div class="projects-grid" id="projects-container">
+            <!-- Projects will be inserted here by JavaScript -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-branding">
+          <h2>[Our Music App]</h2>
+          <p>
+            Powerful harmonic composition tools for musicians and composers.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-section">
+            <h3>Company</h3>
+            <p>© 2025 [Our Music App]</p>
+            <p>A division of Charlando, LLC</p>
+            <p>All rights reserved.</p>
+          </div>
+
+          <div class="footer-section">
+            <h3>Legal</h3>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+          </div>
+        </div>
+
+        <div class="footer-support">
+          <div class="footer-section">
+            <h3>Support</h3>
+            <p>support@[Our Music App].com</p>
+            <a href="#">Report a Bug</a>
+          </div>
+
+          <div class="footer-section">
+            <h3>Business Inquiries</h3>
+            <p>company@charlandoai.com</p>
+          </div>
+
+          <div class="social-links">
+            <h3>FOLLOW US</h3>
+            <div class="social-icons">
+              <a href="#"><span class="icon behance">Be</span></a>
+              <a href="#"><span class="icon dribbble">⊕</span></a>
+              <a href="#"><span class="icon instagram">Ig</span></a>
+              <a href="#"><span class="icon linkedin">In</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="delete-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Delete Project</h2>
+        <p>
+          This action cannot be undone. To confirm, please type your username:
+        </p>
+        <div class="modal-form">
+          <input type="text" id="confirm-username" placeholder="Username" />
+          <div class="modal-buttons">
+            <button id="cancel-delete" class="btn btn-secondary">Cancel</button>
+            <button id="confirm-delete" class="btn btn-danger">
+              Delete Project
+            </button>
+          </div>
+        </div>
+        <p id="delete-error" class="error-message"></p>
+      </div>
+    </div>
+
+    <script src="dash.js"></script>
+  </body>
+</html>
