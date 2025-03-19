@@ -165,7 +165,7 @@ function filterProjects(searchTerm, filterValue) {
         switch(filterValue) {
             case 'recent':
                 // This would normally sort by date, but for simplicity we'll just take the first few
-                filtered = projects.slice(0, 3);
+                filtered = projects.slice(0, 4);
                 break;
             case 'shared':
                 // For demo purposes, we'll pretend some are shared

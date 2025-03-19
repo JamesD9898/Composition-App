@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToneDraft - Authentication</title>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="auth.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <a href="../index.html">ToneDraft</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="auth-container">
+      <div class="auth-card">
+        <div class="auth-header">
+          <h1>Welcome to ToneDraft</h1>
+          <p>Sign in to continue to your dashboard</p>
+        </div>
+
+        <div class="auth-methods">
+          <button class="social-btn google-btn">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+              alt="Google logo"
+            />
+            <span>Sign in with Google</span>
+          </button>
+
+          <div class="divider">
+            <span>or continue with email</span>
+          </div>
+
+          <div class="auth-tabs">
+            <button class="tab-btn active" data-tab="signin">Sign In</button>
+            <button class="tab-btn" data-tab="signup">Sign Up</button>
+          </div>
+
+          <!-- Form Content -->
+          <div class="view-container signin-view active">
+            <form class="auth-form signin-form">
+              <div class="form-group">
+                <label for="signin-email">Email Address</label>
+                <input
+                  type="email"
+                  id="signin-email"
+                  placeholder="your@email.com"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="signin-password">Password</label>
+                <input
+                  type="password"
+                  id="signin-password"
+                  placeholder="••••••••"
+                  required
+                />
+                <div class="password-options">
+                  <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+              </div>
+              <button type="submit" class="auth-submit">Sign In</button>
+            </form>
+          </div>
+
+          <div class="view-container signup-view">
+            <form class="auth-form signup-form">
+              <div class="form-group">
+                <label for="signup-name">Username</label>
+                <input
+                  type="text"
+                  id="signup-name"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="signup-email">Email Address</label>
+                <input
+                  type="email"
+                  id="signup-email"
+                  placeholder="your@email.com"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="signup-password">Password</label>
+                <input
+                  type="password"
+                  id="signup-password"
+                  placeholder="••••••••"
+                  required
+                />
+                <div class="password-requirements">
+                  <p>Password must be at least 8 characters</p>
+                </div>
+              </div>
+              <button type="submit" class="auth-submit">Create Account</button>
+            </form>
+          </div>
+
+          <div class="view-container verify-email-view">
+            <form class="auth-form verify-email-form">
+              <div class="form-group">
+                <label for="verification-code">Verification Code</label>
+                <input
+                  type="text"
+                  id="verification-code"
+                  placeholder="Enter 6-digit code"
+                  required
+                />
+                <div class="verification-hint">
+                  <p>Check your email for a verification code</p>
+                </div>
+              </div>
+              <button type="submit" class="auth-submit">Verify Code</button>
+              <button type="button" class="resend-code">Resend Code</button>
+              <button type="button" class="back-to-signin">
+                Back to Sign In
+              </button>
+            </form>
+          </div>
+
+          <div class="view-container forgot-password-view">
+            <form class="auth-form forgot-password-form">
+              <div class="form-group">
+                <label for="reset-email">Email Address</label>
+                <input
+                  type="email"
+                  id="reset-email"
+                  placeholder="your@email.com"
+                  required
+                />
+              </div>
+              <button type="submit" class="auth-submit">Send Reset Code</button>
+              <button type="button" class="back-to-signin">
+                Back to Sign In
+              </button>
+            </form>
+          </div>
+
+          <div class="view-container verify-reset-view">
+            <form class="auth-form verify-reset-form">
+              <div class="form-group">
+                <label for="reset-verification-code">Verification Code</label>
+                <input
+                  type="text"
+                  id="reset-verification-code"
+                  placeholder="Enter 6-digit code"
+                  required
+                />
+                <div class="verification-hint">
+                  <p>Check your email for a verification code</p>
+                </div>
+              </div>
+              <button type="submit" class="auth-submit">Verify Code</button>
+              <button type="button" class="resend-code">Resend Code</button>
+              <button type="button" class="back-to-signin">
+                Back to Sign In
+              </button>
+            </form>
+          </div>
+
+          <div class="view-container new-password-view">
+            <form class="auth-form new-password-form">
+              <div class="form-group">
+                <label for="new-password">New Password</label>
+                <input
+                  type="password"
+                  id="new-password"
+                  placeholder="••••••••"
+                  required
+                />
+                <div class="password-requirements">
+                  <p>Password must be at least 8 characters</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input
+                  type="password"
+                  id="confirm-password"
+                  placeholder="••••••••"
+                  required
+                />
+              </div>
+              <button type="submit" class="auth-submit">Reset Password</button>
+              <button type="button" class="back-to-signin">
+                Back to Sign In
+              </button>
+            </form>
+          </div>
+
+          <div class="auth-error"></div>
+        </div>
+      </div>
+
+      <div class="auth-background">
+        <div class="auth-image">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/4/4c/CuiVil3_2p204.png"
+            alt="Music notation"
+          />
+        </div>
+        <div class="auth-quote">
+          <blockquote>
+            "Music is the divine way to tell beautiful, poetic things to the
+            heart."
+          </blockquote>
+          <cite>— Pablo Casals</cite>
+        </div>
+      </div>
+    </main>
+
+    <script src="auth.js"></script>
+  </body>
+</html>

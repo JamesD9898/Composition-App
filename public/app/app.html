@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToneDraft - Project</title>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="app.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="../verify.js"></script>
+    <script src="piano-roll.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <a href="../index.html">ToneDraft</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="daw-interface">
+      <div class="daw-controls">
+        <button id="play-btn"><i class="fas fa-play"></i></button>
+        <button id="stop-btn"><i class="fas fa-stop"></i></button>
+        <button id="record-btn"><i class="fas fa-circle"></i></button>
+        <div class="tempo-control">
+          <label for="tempo">BPM:</label>
+          <input type="number" id="tempo" min="40" max="240" value="120" />
+        </div>
+      </div>
+
+      <div class="piano-roll-container">
+        <div class="measure-numbers">
+          <!-- Measure numbers are dynamically created via JavaScript -->
+        </div>
+        <div class="piano-roll-scrollable">
+          <div class="piano-keys">
+            <!-- Piano keys are dynamically created via JavaScript -->
+          </div>
+          <div class="note-grid">
+            <!-- Grid for notes is dynamically created via JavaScript -->
+          </div>
+        </div>
+      </div>
+
+      <div class="daw-toolbar">
+        <button id="add-note-btn" title="Add Note">
+          <i class="fas fa-plus"></i>
+        </button>
+        <button id="delete-note-btn" title="Delete Note">
+          <i class="fas fa-trash"></i>
+        </button>
+        <button id="select-btn" title="Select">
+          <i class="fas fa-mouse-pointer"></i>
+        </button>
+        <select id="note-length">
+          <option value="0.25">1/16</option>
+          <option value="0.5">1/8</option>
+          <option value="1" selected>1/4</option>
+          <option value="2">1/2</option>
+          <option value="4">Whole</option>
+        </select>
+      </div>
+    </main>
+  </body>
+</html>

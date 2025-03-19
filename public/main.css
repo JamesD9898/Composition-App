@@ -31,7 +31,7 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lexend', 'Inter', sans-serif;
     background-color: var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.6;
